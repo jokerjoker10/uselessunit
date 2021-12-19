@@ -1,0 +1,477 @@
+{
+    "result_types":[
+        {
+            "name": "potatoes",
+            "img": {
+                "file": "assets/images/potatoes-ged0343891_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 0.2
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 0.002
+                }
+            ]
+        },
+        {
+            "name": "eifel towers",
+            "img": {
+                "file": "assets/images/eiffel-tower-g6d449c80b_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 10000000
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 10000
+                },
+                {
+                    "value_type": "length",
+                    "value_of_one": 324
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 0.324
+                }
+            ]
+        },
+        {
+            "name": "golden gate bridges",
+            "img": {
+                "file": "assets/images/golden-gate-bridge-g220ceb713_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 887000000
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 887000
+                },
+                {
+                    "value_type": "length",
+                    "value_of_one": 2737
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 2.737
+                }
+            ]
+        },
+        {
+            "name": "blue whales",
+            "img": {
+                "file": "assets/images/whale-g8304cb5a7_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 200000
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 200
+                },
+                {
+                    "value_type": "length",
+                    "value_of_one": 26
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 0.026
+                }
+            ]
+        },
+        {
+            "name": "football fields",
+            "img": {
+                "file": "assets/images/soccer-field-g0711ff24c_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 7140 
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 0.00714
+                }
+            ]
+        },
+        {
+            "name": "bath tubs",
+            "img": {
+                "file": "assets/images/bathtub-g731f91ad6_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "volume",
+                    "value_of_one": 150 
+                }
+            ]
+        },
+        {
+            "name": "distances jupiter to uranus",
+            "img": {
+                "file": "assets/images/jupiter-g9fa2003f8_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "length",
+                    "value_of_one": 2.88e12
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 288000000000
+                }
+            ]
+        },
+        {
+            "name": "distances earth to moon",
+            "img": {
+                "file": "assets/images/moon-gb231bf455_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "length",
+                    "value_of_one": 384400000
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 384400
+                }
+            ]
+        },
+        {
+            "name": "earth circumference",
+            "img": {
+                "file": "assets/images/16530938850_9e39967431_o.jpg",
+                "credit": "Kevin Gill - https://www.flickr.com/photos/kevinmgill/16530938850 (License: https://creativecommons.org/licenses/by/2.0/)"
+            },
+            "values": [
+                {
+                    "value_type": "length",
+                    "value_of_one": 40030000
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 40030
+                }
+            ]
+        },
+        {
+            "name": "organ pipes",
+            "img": {
+                "file": "assets/images/organ-pipes-g5daa2ac43_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "length",
+                    "value_of_one": 2.4
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 0.0024
+                }
+            ]
+        },
+        {
+            "name": "amazonases",
+            "img": {
+                "file": "assets/images/amazonas-g98ccde733_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "length",
+                    "value_of_one": 6592000
+                },
+                {
+                    "value_type": "length_k",
+                    "value_of_one": 6592
+                }
+            ]
+        },
+        {
+            "name": "lung surface",
+            "img": {
+                "file": "assets/images/Lungs_diagram_simple.svg.png",
+                "credit": "Patrick J. Lynch, medical illustrator - https://commons.wikimedia.org/wiki/File:Lungs_diagram_simple.svg (License: https://creativecommons.org/licenses/by/2.5/deed.en)"
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 6592000
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 6.592
+                }
+            ]
+        },
+        {
+            "name": "parking space",
+            "img": {
+                "file": "assets/images/parking-g88a1e4eab_1280.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 546.385
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 0.000546385
+                }
+            ]
+        },
+        {
+            "name": "quidditch field",
+            "img": {
+                "file": "assets/images/parking-g88a1e4eab_1280.jpg",
+                "credit": "Anton Bielousov - https://commons.wikimedia.org/wiki/File:Muggle_Quidditch_Game_in_Vancouver.jpg (License: https://creativecommons.org/licenses/by-sa/3.0/deed.en)"
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 8727.28
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 0.00872728
+                }
+            ]
+        },
+        {
+            "name": "palms",
+            "img": {
+                "file": "assets/images/hand-g691054f16_1920.png",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 0.025446
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 2.5446e-8
+                }
+            ]
+        },
+        {
+            "name": "shoe soles",
+            "img": {
+                "file": "assets/images/running-shoes-gb0b5d57c2_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 0.0225
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 2.25e-8
+                }
+            ]
+        },
+        {
+            "name": "smartphone screens",
+            "img": {
+                "file": "assets/images/technology-g48577d106_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "surface",
+                    "value_of_one": 0.0105
+                },
+                {
+                    "value_type": "surface_k",
+                    "value_of_one": 1.05e-8
+                }
+            ]
+        },
+        {
+            "name": "egypt pyramids",
+            "img": {
+                "file": "assets/images/giza-g38da3a446_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "volume",
+                    "value_of_one": 2583283000
+                }
+            ]
+        },
+        {
+            "name": "Nile",
+            "img": {
+                "file": "assets/images/bank-of-the-nile-gecd27e627_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "volume",
+                    "value_of_one": 4785297500000
+                }
+            ]
+        },
+        {
+            "name": "Sea container",
+            "img": {
+                "file": "assets/images/container-g67d2fb086_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "volume",
+                    "value_of_one": 76000
+                }
+            ]
+        },
+        {
+            "name": "Football Stadiums",
+            "img": {
+                "file": "assets/images/stadium-gea9f0cac2_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "volume",
+                    "value_of_one": 1200000000
+                }
+            ]
+        },
+        {
+            "name": "rivets of the golden gate bridge",
+            "img": {
+                "file": "assets/images/golden-gate-bridge-g220ceb713_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 324000
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 324
+                }
+            ]
+        },
+        {
+            "name": "kidneys",
+            "img": {
+                "file": "assets/images/kidney-gc60ac5bf2_1280.png",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 0.15
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 0.015
+                }
+            ]
+        },
+        {
+            "name": "graphics cards",
+            "img": {
+                "file": "assets/images/graphic-card-gfa2e8ebf5_1280.png",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 1.27
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 0.00127
+                }
+            ]
+        },
+        {
+            "name": "grains of sands",
+            "img": {
+                "file": "assets/images/sand-g36b5fc50d_1920.jpg",
+                "credit": ""
+            },
+            "values": [
+                {
+                    "value_type": "mass",
+                    "value_of_one": 5.5e-8
+                },
+                {
+                    "value_type": "mass_t",
+                    "value_of_one": 5.5e-11
+                }
+            ]
+        }
+    ],
+    "value_types": [
+        {
+            "type": "volume",
+            "metric": "l",
+            "imperial": "gal",
+            "in_metric": 3.78541
+        },
+        {
+            "type": "surface",
+            "metric": "m²",
+            "imperial": "ft²",
+            "in_metric": 0.092903
+        },
+        {
+            "type": "surface_k",
+            "metric": "km²",
+            "imperial": "mi²",
+            "in_metric": 3.861e-7
+        },
+        {
+            "type": "mass",
+            "metric": "kg",
+            "imperial": "lb",
+            "in_metric": 0.45359237
+        },
+        {
+            "type": "mass_t",
+            "metric": "t",
+            "imperial": "t",
+            "in_metric": 0.984207
+        },
+        {
+            "type": "length",
+            "metric": "m",
+            "imperial": "ft",
+            "in_metric": 3.28084
+        },
+        {
+            "type": "length_k",
+            "metric": "km",
+            "imperial": "mi",
+            "in_metric": 0.621371
+        }
+    ]
+}
