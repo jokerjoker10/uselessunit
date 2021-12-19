@@ -36,7 +36,7 @@ function calulate(session_data: SessionData): SessionData{
         }
     });
     console.log(finalist);
-    var final_result = finalist[Math.floor(Math.random()*finalist.length)];
+    var final_result = result_types[Math.floor(Math.random()*result_types.length)];
     session_data.result_name = final_result.name;
     session_data.result_value = final_result.result;
     return session_data;
