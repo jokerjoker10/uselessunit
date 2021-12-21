@@ -22,11 +22,11 @@ if (config.matomo.use_matomo) {
 }
 
 ReactDOM.render(
-  <MatomoProvider value={instace}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <MatomoProvider value={instace}>
       <App />
-    </React.StrictMode>
-  </MatomoProvider>,
+    </MatomoProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
