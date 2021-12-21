@@ -1,0 +1,11 @@
+version: "2"
+services:
+
+  uselessunit:
+    build:
+      context: .
+    volumes:
+      - /root/uselessunit_config:/usr/share/nginx/html/src/config
+    ports:
+      - "8501:80"
+    restart: always
