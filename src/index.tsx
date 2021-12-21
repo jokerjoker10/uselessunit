@@ -3,24 +3,19 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import config from './config/config';
 
 // matomo tracking
-import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
+import { MatomoProvider, createInstance, useMatomo } from '@datapunt/matomo-tracker-react'
 var instace: any;
-if (process.env.MATOMO_URL) {
-  console.log(process.env.MATOMO_URL)
+if (config.matomo.use_matomo) {
   instace = createInstance({
-    urlBase: process.env.MATOMO_URL || '',
-    siteId: Number(process.env.MATOMO_SITE_ID) || 0,
-    disabled: process.env.MATOMO_URL ? true : false, // optional, false by default. Makes all tracking calls no-ops if set to true.
-    heartBeat: { // optional, enabled by default
-      active: true, // optional, default value: true
-      seconds: 10 // optional, default value: `15
-    },
-    configurations: { // optional, default value: {}
-      // any valid matomo configuration, all below are optional
+    urlBase: config.matomo.matomo_url,
+    siteId: config.matomo.matomo_site_id,
+    disabled: config.matomo.use_matomo,
+    configurations: {
       disableCookies: true,
-      setSecureCookie: false,
+      setSecureCookie: true,
       setRequestMethod: 'POST'
     }
   })
