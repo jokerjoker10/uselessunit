@@ -4,8 +4,6 @@ services:
   uselessunit:
     build:
       context: .
-    volumes:
-      - /root/uselessunit_config:/usr/share/nginx/html/assets/config
     ports:
       - "8501:80"
     restart: always
