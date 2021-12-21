@@ -1,7 +1,7 @@
 import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import './Result.css';
-import config from '../config/config.json'
+import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { SessionData } from '../models/SessionData';
 
