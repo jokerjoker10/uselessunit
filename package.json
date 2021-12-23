@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@capacitor/core": "3.3.3",
-    "@datapunt/matomo-tracker-react": "^0.5.1",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.9",
