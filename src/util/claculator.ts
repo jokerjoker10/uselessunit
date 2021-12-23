@@ -1,5 +1,5 @@
 import { SessionData } from "../models/SessionData";
-import config from '../config/config.json'
+import config from '../config/data.json'
 
 var calculator = {
     calulate: calulate

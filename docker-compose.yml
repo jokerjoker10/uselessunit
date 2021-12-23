@@ -1,0 +1,9 @@
+version: "2"
+services:
+
+  uselessunit:
+    build:
+      context: .
+    ports:
+      - "8501:80"
+    restart: always
