@@ -14,6 +14,7 @@ cd uselessunit
 docker-compose build
 docker-compose up
 ```
+The default port of the container is 8501. If you want to change that just modify the docker-compose.yml.
 
 # Development
 To host it localy you need to install node and the ionic cli after that you need to pull the repo and host the local development server:
