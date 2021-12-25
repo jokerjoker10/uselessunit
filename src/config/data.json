@@ -428,6 +428,19 @@
                     "value_of_one": 5.5e-11
                 }
             ]
+        },
+        {
+            "name": "eggs",
+            "img":{
+                "file": "assets/images/egg-2580904_1920.jpg",
+                "credit":""
+            },
+            "values":[
+                {
+                    "value_type": "volume",
+                    "value_of_one": 0.057
+                }
+            ]
         }
     ],
     "value_types": [
