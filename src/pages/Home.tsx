@@ -1,10 +1,9 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
-import { useEffect, useState } from 'react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { useState } from 'react';
 import './Home.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
-import { SessionData } from '../models/SessionData';
-import calculator from '../util/claculator';
+import { Request } from '../models/SessionData';
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -14,7 +13,7 @@ const Home: React.FC = () => {
   const [value, setValue] = useState<Number>(0);
   const [value_type, setValueType] = useState<String>("");
 
-  var session_data: SessionData = {
+  var request: Request = {
     value: value,
     value_type: value_type
   }
@@ -23,37 +22,21 @@ const Home: React.FC = () => {
   const [missing_type, setMissingType] = useState<Boolean>(false); 
 
   function _calculate() {
-    if(!session_data.value && !session_data.value_type){
+    if(!request.value && !request.value_type){
       setMissingValue(true);
       setMissingType(true);
       return;
     }
-    if(!session_data.value){
+    if(!request.value){
       setMissingValue(true);
       return;
     }
-    if(!session_data.value_type){
+    if(!request.value_type){
       setMissingType(true);
       return;
     }
-    var _session_data = calculator.calulate(session_data);
-    console.log(_session_data)
-
-    session_data = _session_data;
-    history.push({ pathname: "/res", search: "data=" + encodeURIComponent(JSON.stringify(session_data)) });
+    history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(request)) });
   }
-
-  useIonViewDidEnter(() => {
-    var _session_data = new URLSearchParams(location.search).get("data") || null;
-
-    if (_session_data != null) {
-      var parsed_data: SessionData = JSON.parse(decodeURIComponent(_session_data));
-      console.log(parsed_data)
-
-      setValue(parsed_data.value);
-      setValueType(parsed_data.value_type);
-    }
-  })
 
   function metricToggle() {
     setMetric(!metric)

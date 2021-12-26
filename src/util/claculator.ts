@@ -1,45 +1,22 @@
-import { SessionData } from "../models/SessionData";
+import { Request, Result } from "../models/SessionData";
 import config from '../config/data.json'
 
 var calculator = {
-    calulate: calulate
+    getResultList: getResultList
 }
 
-function calulate(session_data: SessionData): SessionData{
-    console.log("Calculating...");
-    var result_types = getAllResultsOfType(session_data.value_type);
-    console.log(result_types);
+function getResultList(request: Request): Array<Result>{
+    var result_types = getAllResultsOfType(request.value_type);
 
     var decimal_mean = 0;
     result_types.forEach((element: any) => {
-        var result = Number(session_data.value) / element.value_of_one;
+        var result = Number(request.value) / element.value_of_one;
         decimal_mean = decimal_mean + getDecimals(result);
-        element["result"] = result;
-
-        // if result name is set -> return result without selecting a new one 
-        if(element.name == session_data.result_name){
-            session_data.result_value = result;
-            return session_data;
-        }
-
+        element.result = result;
     });
-
-    decimal_mean = decimal_mean / result_types.length;
-
-    var finalist:any = [];
-    result_types.forEach((element: any) => {
-        if(element.result % 1 == 0){
-            finalist.push(element);
-        }
-        else if(getDecimals(element.result) <= decimal_mean){
-            finalist.push(element);
-        }
-    });
-    console.log(finalist);
-    var final_result = result_types[Math.floor(Math.random()*result_types.length)];
-    session_data.result_name = final_result.name;
-    session_data.result_value = final_result.result;
-    return session_data;
+    
+    var result_list: Array<Result> = result_types;
+    return result_list;
 }
 
 function getAllResultsOfType(value_type: String){
