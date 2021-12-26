@@ -1,9 +1,10 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import { useState } from 'react';
 import './Home.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { Request } from '../models/SessionData';
+import { logoGithub } from 'ionicons/icons';
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -79,6 +80,9 @@ const Home: React.FC = () => {
             </IonCardContent>
           </IonCard>
         </div>
+        <a href='https://github.com/jokerjoker10/uselessunit'> 
+            <IonIcon icon={logoGithub} className="github_logo"></IonIcon>
+        </a>
       </IonContent>
     </IonPage>
   );

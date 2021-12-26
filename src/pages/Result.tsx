@@ -1,10 +1,11 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import './Result.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { Request, Result } from '../models/SessionData';
 import calculator from '../util/claculator';
+import { logoGithub } from 'ionicons/icons'
 
 const ResultPage: React.FC = () => {
     const history = useHistory();
@@ -159,7 +160,9 @@ const ResultPage: React.FC = () => {
                     </IonCard>
                 </div>
                 <p style={{ position: "fixed", bottom: "0px" }}>{image_credit != "" ? "Photo: " + image_credit : ""}</p>
-
+                <a href='https://github.com/jokerjoker10/uselessunit'> 
+                    <IonIcon icon={logoGithub} className="github_logo"></IonIcon>
+                </a>
             </IonContent>
         </IonPage>
     );
