@@ -1,0 +1,16 @@
+.github_logo{
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.github_logo_frame {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+}

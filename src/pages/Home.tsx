@@ -20,19 +20,19 @@ const Home: React.FC = () => {
   }
 
   const [missing_value, setMissingValue] = useState<Boolean>(false);
-  const [missing_type, setMissingType] = useState<Boolean>(false); 
+  const [missing_type, setMissingType] = useState<Boolean>(false);
 
   function _calculate() {
-    if(!request.value && !request.value_type){
+    if (!request.value && !request.value_type) {
       setMissingValue(true);
       setMissingType(true);
       return;
     }
-    if(!request.value){
+    if (!request.value) {
       setMissingValue(true);
       return;
     }
-    if(!request.value_type){
+    if (!request.value_type) {
       setMissingType(true);
       return;
     }
@@ -74,15 +74,12 @@ const Home: React.FC = () => {
                   </IonSelect>
                 </IonItem>
               </IonItem>
-              <IonButton expand="block" onClick={e => {_calculate() }} type="submit">
+              <IonButton expand="block" onClick={e => { _calculate() }} type="submit">
                 Calculate
               </IonButton>
             </IonCardContent>
           </IonCard>
         </div>
-        <a href='https://github.com/jokerjoker10/uselessunit'> 
-            <IonIcon icon={logoGithub} className="github_logo"></IonIcon>
-        </a>
       </IonContent>
     </IonPage>
   );

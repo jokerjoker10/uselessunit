@@ -16,7 +16,7 @@ const ResultPage: React.FC = () => {
     const [image_path, setImagePath] = useState<String>("none");
     const [image_credit, setImageCredit] = useState<String>("");
 
-    
+
     const [result_list, setResultList] = useState<Array<Result>>();
     const [current_result, setCurrentResult] = useState<Result>();
 
@@ -47,8 +47,8 @@ const ResultPage: React.FC = () => {
         });
     }
 
-    function roundNumber(n: Number): String{
-        if(Number(n) % 1 == 0){
+    function roundNumber(n: Number): String {
+        if (Number(n) % 1 == 0) {
             return n.toString();
         }
         return n.toFixed(20).match(/^-?\d*\.?0*\d{0,2}/)![0];
@@ -64,24 +64,24 @@ const ResultPage: React.FC = () => {
             console.log(parsed_data);
             var _result_list: Array<Result> = calculator.getResultList(parsed_data);
             setResultList(_result_list);
-            
+
 
             var current_result_set = false;
             _result_list.forEach(element => {
-                if(element.name == parsed_data.result_name){
+                if (element.name == parsed_data.result_name) {
                     setCurrentResult(element);
                     current_result_set = true;
                 }
             });
-            
+
             console.log(_result_list)
-            var rand_result: Result = _result_list[Math.floor(Math.random()*_result_list.length)];
-            if(!current_result_set){
+            var rand_result: Result = _result_list[Math.floor(Math.random() * _result_list.length)];
+            if (!current_result_set) {
                 console.log(rand_result);
                 setCurrentResult(rand_result);
             }
         }
-        else{
+        else {
             // no Request. return to home
             window.location.href = "/";
         }
@@ -96,38 +96,38 @@ const ResultPage: React.FC = () => {
         setMetric(!metric)
     }
 
-    function nextResult(){
+    function nextResult() {
         var new_result: Result;
-        if(result_list?.indexOf(current_result!) == result_list?.length! - 1){
+        if (result_list?.indexOf(current_result!) == result_list?.length! - 1) {
             new_result = result_list[0];
         }
-        else{
+        else {
             new_result = result_list![result_list?.indexOf(current_result!)! + 1];
         }
         setCurrentResult(new_result);
-        var _request: Request = {value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name}
+        var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request))});
+        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request)) });
 
         setImage();
     }
 
-    function prevResult(){
+    function prevResult() {
         var new_result: Result;
 
-        if(result_list?.indexOf(current_result!) == 0){
+        if (result_list?.indexOf(current_result!) == 0) {
             new_result = result_list[result_list.length - 1];
         }
-        else{
+        else {
             new_result = result_list![result_list?.indexOf(current_result!)! - 1];
         }
         setCurrentResult(new_result);
-        var _request: Request = {value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name}
+        var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request))});
+        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request)) });
 
         setImage();
-    } 
+    }
 
     return (
         <IonPage>
@@ -139,7 +139,7 @@ const ResultPage: React.FC = () => {
                     <IonLabel>Metric</IonLabel>
                 </IonButtons>
             </IonToolbar>
-                <IonContent fullscreen style={{ "--background": "url('" + image_path + "') no-repeat center center / cover"}}>
+            <IonContent fullscreen style={{ "--background": "url('" + image_path + "') no-repeat center center / cover" }}>
                 <div className="main_field">
                     <IonCard>
                         <IonCardHeader>
@@ -148,9 +148,9 @@ const ResultPage: React.FC = () => {
                             </IonCardTitle>
                         </IonCardHeader>
                         <IonCardContent></IonCardContent>
-                        <IonCardContent style={{display: "flex", justifyContent: "center"}}>
-                            <IonButton fill="outline" slot='start' onClick={e => {prevResult()}}>{"<"}</IonButton>
-                            <IonButton fill="outline" slot='end' onClick={e => {nextResult()}}>{">"}</IonButton>
+                        <IonCardContent style={{ display: "flex", justifyContent: "center" }}>
+                            <IonButton fill="outline" slot='start' onClick={e => { prevResult() }}>{"<"}</IonButton>
+                            <IonButton fill="outline" slot='end' onClick={e => { nextResult() }}>{">"}</IonButton>
                         </IonCardContent>
                         <IonCardContent>
                             <IonButton expand="block" fill="outline" href="/">
@@ -160,9 +160,6 @@ const ResultPage: React.FC = () => {
                     </IonCard>
                 </div>
                 <p style={{ position: "fixed", bottom: "0px" }}>{image_credit != "" ? "Photo: " + image_credit : ""}</p>
-                <a href='https://github.com/jokerjoker10/uselessunit'> 
-                    <IonIcon icon={logoGithub} className="github_logo"></IonIcon>
-                </a>
             </IonContent>
         </IonPage>
     );
