@@ -4,7 +4,7 @@ import './Home.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { Request } from '../models/SessionData';
-import { logoGithub } from 'ionicons/icons';
+import Logo from '../components/logo';
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -46,7 +46,8 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonToolbar>
-        <IonTitle>Useless Unit</IonTitle>
+        <Logo></Logo>
+        <IonTitle slot="start">Useless Unit</IonTitle>
         <IonButtons slot="end">
           <IonLabel>Imperial</IonLabel>
           <IonToggle checked={Boolean(metric)} onIonChange={e => { metricToggle(); }}></IonToggle>
