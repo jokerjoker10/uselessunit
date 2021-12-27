@@ -6,6 +6,7 @@ import { useHistory, useLocation } from 'react-router';
 import { Request, Result } from '../models/SessionData';
 import calculator from '../util/claculator';
 import { logoGithub } from 'ionicons/icons'
+import Logo from '../components/logo';
 
 const ResultPage: React.FC = () => {
     const history = useHistory();
@@ -132,7 +133,8 @@ const ResultPage: React.FC = () => {
     return (
         <IonPage>
             <IonToolbar>
-                <IonTitle>Useless Unit</IonTitle>
+                <Logo></Logo>
+                <IonTitle slot="start">Useless Unit</IonTitle>
                 <IonButtons slot="end">
                     <IonLabel>Imperial</IonLabel>
                     <IonToggle checked={Boolean(metric)} onIonChange={e => { metricToggle(); getResultString(); }}></IonToggle>
