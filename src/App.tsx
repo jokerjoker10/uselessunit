@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import GithubLogo from './components/githublogo';
+import About from './pages/info/about';
 
 setupIonicReact();
 
@@ -33,6 +34,7 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route exact path="/" component={Home}></Route>
         <Route path="/res" component={ResultPage}></Route>
+        <Route path="/about" component={About}></Route>
       </IonRouterOutlet>
     </IonReactRouter>
     <GithubLogo></GithubLogo>
