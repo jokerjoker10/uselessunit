@@ -1,4 +1,4 @@
-import { IonIcon, IonItem } from '@ionic/react';
+import { IonIcon, IonItem, IonLabel } from '@ionic/react';
 import { logoGithub } from 'ionicons/icons';
 import './style.css';
 
@@ -10,8 +10,9 @@ const GithubLogo: React.FC<ContainerProps> = () => {
     }
 
     return (
-        <IonItem button onClick={loadGithub} className="github_logo_frame">
-            <IonIcon icon={logoGithub} className="github_logo"></IonIcon>
+        <IonItem  className="github_logo_frame">
+            <IonLabel><a href="/about">About</a></IonLabel>
+            <IonIcon onClick={loadGithub} icon={logoGithub} className="github_logo"></IonIcon>
         </IonItem>
     );
 };
