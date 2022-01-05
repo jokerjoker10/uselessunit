@@ -8,7 +8,7 @@ ionic serve
 ```
 
 ## Contributing
-If you want to contribute please create your own branch. If your code is ready please create a pull request. The code will then be reviewed and if all is good it will be merged with the main branch and deployed.
+If you want to contribute please create your own branch. If your code is ready please create a pull request from your branch to the dev Branch. The code will then be reviewed and if all is good it will be merged with the main branch and deployed.
 
 ## Naming Convention
 - variables: snake_case
