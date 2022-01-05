@@ -6,7 +6,7 @@ import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline 
 
 const About: React.FC = () => {
     function openMail(){
-        window.open("mailto:uselessunit@jokerjoker10.cloud");
+        window.open("mailto:info@uselessunit.cloud");
     }
     function openGithub(){
         window.open("https://github.com/jokerjoker10/uselessunit/issues");
