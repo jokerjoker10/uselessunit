@@ -38,54 +38,28 @@ const About: React.FC = () => {
                             <IonButton onClick={e => openMail()}><IonIcon icon={mailOutline}></IonIcon>Contact per E-Mail</IonButton>
                             <IonButton onClick={e => openGithub()}><IonIcon icon={logoGithub}></IonIcon>Create an Issue on GitHub</IonButton>
                         </IonCardContent>
-                        <IonCardContent>
-                            <IonList>
-                                <IonListHeader>Developers:</IonListHeader>
-                                
-                                <IonItem>
-                                    <IonLabel>jokerjoker10<p>Developer</p></IonLabel>
-                                    <IonItem>
-                                        <IonIcon icon={logoTwitter}></IonIcon>
-                                        <IonLabel><a href='https://twitter.com/jokerjoker_10'>@jokerjoker_10</a></IonLabel>
-                                    </IonItem>
-                                    <IonItem>
-                                        <IonIcon icon={logoGithub}></IonIcon>
-                                        <IonLabel><a href='https://github.com/jokerjoker10'>jokerjoker10</a></IonLabel>
-                                    </IonItem>
-                                </IonItem>
-
-                                <IonItem>
-                                    <IonLabel>LordTheoThor<p>Data Research</p></IonLabel>
-                                </IonItem>
-
-                            </IonList>
-                        </IonCardContent>
+                        
                         <IonCardContent>
                             <IonList>
                                 <IonListHeader>Used Tech:</IonListHeader>
                                 <IonItem>
                                     <IonIcon icon={logoIonic} slot='start'></IonIcon>
-                                    <IonLabel><p>Ionic</p></IonLabel>
-                                </IonItem>
-
-                                <IonItem>
-                                    <IonIcon icon={logoReact} slot='start'></IonIcon>
-                                    <IonLabel><p>React</p></IonLabel>
+                                    <IonLabel>Ionic - React<p>Frontend Framework</p></IonLabel>
                                 </IonItem>
 
                                 <IonItem>
                                     <IonIcon slot='start'></IonIcon>
-                                    <IonLabel><p>Matomo</p></IonLabel>
+                                    <IonLabel>Matomo<p>Tracking</p></IonLabel>
                                 </IonItem>
 
                                 <IonItem>
                                     <IonIcon icon={logoDocker} slot='start'></IonIcon>
-                                    <IonLabel><p>Docker</p></IonLabel>
+                                    <IonLabel>Docker<p>Container Engine</p></IonLabel>
                                 </IonItem>
 
                                 <IonItem>
                                     <IonIcon icon={logoGithub} slot='start'></IonIcon>
-                                    <IonLabel><p>GitHub</p></IonLabel>
+                                    <IonLabel>GitHub<p>Code Management</p></IonLabel>
                                 </IonItem>
                             </IonList>
 
