@@ -5,9 +5,11 @@ import './about.css';
 import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline } from 'ionicons/icons';
 
 const About: React.FC = () => {
+
     function openMail() {
         window.open("mailto:uselessunit@jokerjoker10.cloud");
     }
+  
     function openGithub() {
         window.open("https://github.com/jokerjoker10/uselessunit/issues");
     }
