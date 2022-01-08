@@ -5,10 +5,12 @@ import './about.css';
 import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline } from 'ionicons/icons';
 
 const About: React.FC = () => {
-    function openMail(){
-        window.open("mailto:info@uselessunit.cloud");
+
+    function openMail() {
+        window.open("mailto:uselessunit@jokerjoker10.cloud");
     }
-    function openGithub(){
+  
+    function openGithub() {
         window.open("https://github.com/jokerjoker10/uselessunit/issues");
     }
     return (
@@ -38,7 +40,33 @@ const About: React.FC = () => {
                             <IonButton onClick={e => openMail()}><IonIcon icon={mailOutline}></IonIcon>Contact per E-Mail</IonButton>
                             <IonButton onClick={e => openGithub()}><IonIcon icon={logoGithub}></IonIcon>Create an Issue on GitHub</IonButton>
                         </IonCardContent>
-                        
+
+                        <IonCardContent>
+                            <IonList>
+                                <IonListHeader>Developers:</IonListHeader>
+                            </IonList>
+                            <IonItem>
+                                <IonLabel>jokerjoker10<p>Development</p></IonLabel>
+                                <IonItem lines="none">
+                                    <IonList>
+                                        
+                                        <IonItem lines="none">
+                                            <IonIcon icon={logoTwitter} slot='start'></IonIcon>
+                                            <IonLabel><a href="https://twitter.com/jokerjoker_10">jokerjoker_10</a></IonLabel>
+                                        </IonItem>
+                                        <IonItem lines="none">
+                                            <IonIcon icon={logoGithub} slot='start'></IonIcon>
+                                            <IonLabel><a href="https://github.com/jokerjoker10">jokerjoker10</a></IonLabel>
+                                        </IonItem>
+
+                                    </IonList>
+                                </IonItem>
+                            </IonItem>
+                            <IonItem>
+                                <IonLabel>LordTheoThor<p>Data Research</p></IonLabel>
+                            </IonItem>
+                        </IonCardContent>
+
                         <IonCardContent>
                             <IonList>
                                 <IonListHeader>Used Tech:</IonListHeader>
