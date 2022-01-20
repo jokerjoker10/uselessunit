@@ -2,7 +2,6 @@ import { IonIcon, IonItem, IonLabel, IonList } from '@ionic/react';
 import { logoGithub } from 'ionicons/icons';
 import './style.css';
 
-
 interface ContainerProps { }
 
 const GithubLogo: React.FC<ContainerProps> = () => {

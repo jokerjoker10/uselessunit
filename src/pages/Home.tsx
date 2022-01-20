@@ -1,10 +1,11 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useState } from 'react';
 import './Home.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { Request } from '../models/SessionData';
 import Logo from '../components/logo';
+import { url_fun } from '../util/url';
 
 const Home: React.FC = () => {
   const history = useHistory();
@@ -36,17 +37,31 @@ const Home: React.FC = () => {
       setMissingType(true);
       return;
     }
-    history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(request)) });
+    history.push({pathname: "/res", search: String(url_fun.getQuerryString({request: JSON.stringify(request), metric: metric}))});
   }
 
   function metricToggle() {
-    setMetric(!metric)
+    var _metric = !metric;
+    setMetric(_metric);
   }
+
+  useIonViewDidEnter(() => {
+    var _metric = new URLSearchParams(location.search).get("metric") || null;
+    console.log(_metric)
+    if(_metric != null){
+        if(_metric == "false") {
+            setMetric(false);
+        }
+        else if(_metric == "true") {
+            setMetric(true);
+        }
+    }
+  })
 
   return (
     <IonPage>
       <IonToolbar>
-        <Logo></Logo>
+      <Logo></Logo>
         <IonTitle slot="start">Useless Unit</IonTitle>
         <IonButtons slot="end">
           <IonLabel>Imperial</IonLabel>
@@ -65,10 +80,10 @@ const Home: React.FC = () => {
             <IonCardContent>
               <IonItem>
                 <IonItem color={missing_value ? "danger" : ""}>
-                  <IonInput slot="start" type="number" onIonChange={e => setValue(Number(e.detail.value))} value={Number(value)}></IonInput>
+                  <IonInput type="number" onIonChange={e => setValue(Number(e.detail.value))} value={Number(value)}></IonInput>
                 </IonItem>
                 <IonItem color={missing_type ? "danger" : ""}>
-                  <IonSelect interface="popover" slot="end" placeholder="Unit" onIonChange={e => { setValueType(e.detail.value) }} value={value_type}>
+                  <IonSelect interface="popover" placeholder="Unit" onIonChange={e => { setValueType(e.detail.value) }} value={value_type}>
                     {config.value_types.map((option, index) => (
                       <IonSelectOption key={index} value={option.type}>{metric ? option.metric : option.imperial}</IonSelectOption>
                     ))}

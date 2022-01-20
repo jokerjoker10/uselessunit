@@ -4,7 +4,7 @@
             "name": "potatoes",
             "img": {
                 "file": "assets/images/potatoes-ged0343891_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -21,7 +21,7 @@
             "name": "eifel towers",
             "img": {
                 "file": "assets/images/eiffel-tower-g6d449c80b_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -46,7 +46,7 @@
             "name": "golden gate bridges",
             "img": {
                 "file": "assets/images/golden-gate-bridge-g220ceb713_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -71,7 +71,7 @@
             "name": "blue whales",
             "img": {
                 "file": "assets/images/whale-g8304cb5a7_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -96,7 +96,7 @@
             "name": "football fields",
             "img": {
                 "file": "assets/images/soccer-field-g0711ff24c_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -113,7 +113,7 @@
             "name": "bath tubs",
             "img": {
                 "file": "assets/images/bathtub-g731f91ad6_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -126,7 +126,7 @@
             "name": "distances jupiter to uranus",
             "img": {
                 "file": "assets/images/jupiter-g9fa2003f8_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -143,7 +143,7 @@
             "name": "distances earth to moon",
             "img": {
                 "file": "assets/images/moon-gb231bf455_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -160,7 +160,11 @@
             "name": "earth circumference",
             "img": {
                 "file": "assets/images/16530938850_9e39967431_o.jpg",
-                "credit": "Kevin Gill - https://www.flickr.com/photos/kevinmgill/16530938850 (License: https://creativecommons.org/licenses/by/2.0/)"
+                "credit": {
+                    "author": "Kevin Gill",
+                    "photo": "https://www.flickr.com/photos/kevinmgill/16530938850",
+                    "license": "https://creativecommons.org/licenses/by/2.0/"
+                }
             },
             "values": [
                 {
@@ -177,7 +181,7 @@
             "name": "organ pipes",
             "img": {
                 "file": "assets/images/organ-pipes-g5daa2ac43_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -194,7 +198,7 @@
             "name": "amazonases",
             "img": {
                 "file": "assets/images/amazonas-g98ccde733_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -211,7 +215,11 @@
             "name": "lung surface",
             "img": {
                 "file": "assets/images/Lungs_diagram_simple.svg.png",
-                "credit": "Patrick J. Lynch, medical illustrator - https://commons.wikimedia.org/wiki/File:Lungs_diagram_simple.svg (License: https://creativecommons.org/licenses/by/2.5/deed.en)"
+                "credit": {
+                    "author": "Patrick J. Lynch, medical illustrator",
+                    "photo": "https://commons.wikimedia.org/wiki/File:Lungs_diagram_simple.svg",
+                    "license": "https://creativecommons.org/licenses/by/2.5/deed.en"
+                }
             },
             "values": [
                 {
@@ -228,7 +236,7 @@
             "name": "parking space",
             "img": {
                 "file": "assets/images/parking-g88a1e4eab_1280.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -245,7 +253,11 @@
             "name": "quidditch field",
             "img": {
                 "file": "assets/images/2560px-Muggle_Quidditch_Game_in_Vancouver.jpg",
-                "credit": "Anton Bielousov - https://commons.wikimedia.org/wiki/File:Muggle_Quidditch_Game_in_Vancouver.jpg (License: https://creativecommons.org/licenses/by-sa/3.0/deed.en)"
+                "credit": {
+                    "author": "Anton Bielousov",
+                    "photo": "https://commons.wikimedia.org/wiki/File:Muggle_Quidditch_Game_in_Vancouver.jpg",
+                    "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en"
+                }
             },
             "values": [
                 {
@@ -262,7 +274,7 @@
             "name": "palms",
             "img": {
                 "file": "assets/images/hand-g691054f16_1920.png",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -279,7 +291,7 @@
             "name": "shoe soles",
             "img": {
                 "file": "assets/images/running-shoes-gb0b5d57c2_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -296,7 +308,7 @@
             "name": "smartphone screens",
             "img": {
                 "file": "assets/images/technology-g48577d106_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -313,7 +325,7 @@
             "name": "egypt pyramids",
             "img": {
                 "file": "assets/images/giza-g38da3a446_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -326,7 +338,7 @@
             "name": "Nile",
             "img": {
                 "file": "assets/images/bank-of-the-nile-gecd27e627_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -339,7 +351,7 @@
             "name": "Sea container",
             "img": {
                 "file": "assets/images/container-g67d2fb086_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -352,7 +364,7 @@
             "name": "Football Stadiums",
             "img": {
                 "file": "assets/images/stadium-gea9f0cac2_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -365,7 +377,7 @@
             "name": "rivets of the golden gate bridge",
             "img": {
                 "file": "assets/images/golden-gate-bridge-g220ceb713_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -382,7 +394,7 @@
             "name": "kidneys",
             "img": {
                 "file": "assets/images/kidney-gc60ac5bf2_1280.png",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -399,7 +411,7 @@
             "name": "graphics cards",
             "img": {
                 "file": "assets/images/graphic-card-gfa2e8ebf5_1280.png",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -416,7 +428,7 @@
             "name": "grains of sands",
             "img": {
                 "file": "assets/images/sand-g36b5fc50d_1920.jpg",
-                "credit": ""
+                "credit": null
             },
             "values": [
                 {
@@ -433,7 +445,7 @@
             "name": "eggs",
             "img":{
                 "file": "assets/images/egg-2580904_1920.jpg",
-                "credit":""
+                "credit": null
             },
             "values":[
                 {

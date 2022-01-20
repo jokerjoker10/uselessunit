@@ -1,5 +1,4 @@
 import { IonAvatar, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
-import config from '../../config/data.json'
 import Logo from '../../components/logo';
 import './about.css';
 import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline } from 'ionicons/icons';
@@ -31,10 +30,13 @@ const About: React.FC = () => {
                             </IonCardTitle>
                         </IonCardHeader>
                         <IonCardContent>
-                            This App is Open Source Software. You can find the GitHub Repo here: https://github.com/jokerjoker10/uselessunit.
+                            All information on this website/app is provided without guarantee!
                         </IonCardContent>
                         <IonCardContent>
-                            This Website is currently hosted in Germany and uses Matomo for tracking the website usage.
+                            This website/app is open Source Software. You can find the GitHub repo here: https://github.com/jokerjoker10/uselessunit.
+                        </IonCardContent>
+                        <IonCardContent>
+                            This website/app uses Matomo Tracking for website usage analysis. Matomo is configured to don't use cookies. The data about you is anonymised and will be deleted after 30 days. 
                         </IonCardContent>
                         <IonCardContent>
                             <IonButton onClick={e => openMail()}><IonIcon icon={mailOutline}></IonIcon>Contact per E-Mail</IonButton>
