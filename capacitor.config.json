@@ -5,4 +5,4 @@
     "npmClient": "npm",
     "webDir": "build",
     "cordova": {}
-}
+  }
