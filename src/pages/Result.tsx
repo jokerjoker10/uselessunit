@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import './Result.css';
 import config from '../config/data.json'
@@ -8,6 +8,7 @@ import calculator from '../util/claculator';
 import { logoGithub } from 'ionicons/icons'
 import Logo from '../components/logo';
 import { url_fun } from '../util/url';
+import { CreditModel } from '../models/CreditModel';
 
 const ResultPage: React.FC = () => {
     const history = useHistory();
@@ -16,7 +17,7 @@ const ResultPage: React.FC = () => {
     const [metric, setMetric] = useState<Boolean>(true);
 
     const [image_path, setImagePath] = useState<String>("none");
-    const [image_credit, setImageCredit] = useState<String>("");
+    const [image_credit, setImageCredit] = useState<CreditModel | null>();
 
 
     const [result_list, setResultList] = useState<Array<Result>>();
@@ -28,7 +29,11 @@ const ResultPage: React.FC = () => {
     function setImage() {
         config.result_types.forEach(element => {
             if (element.name == current_result?.name) {
-                setImageCredit(element.img.credit);
+                setImageCredit(element.img.credit == null ? null : {
+                    author: element.img.credit.author,
+                    photo: element.img.credit.photo,
+                    license: element.img.credit.license ?? ""
+                });
                 setImagePath(element.img.file);
             }
         })
@@ -173,9 +178,31 @@ const ResultPage: React.FC = () => {
                                 Calculate another
                             </IonButton>
                         </IonCardContent>
+                        {
+                            image_credit == null ? <></> : 
+                            <>
+                                <IonCardContent>
+                                    <IonAccordionGroup>
+                                    <IonAccordion>
+                                        <IonItem slot='header'>
+                                            <IonLabel>Image Credit</IonLabel>
+                                        </IonItem>
+                                        <IonItem slot='content'>
+                                            <p>Author: {image_credit.author}</p>
+                                        </IonItem>
+                                        <IonItem slot='content'>
+                                            <p>Photo:<a href={String(image_credit.photo)}> {image_credit.photo}</a></p> 
+                                        </IonItem>
+                                        <IonItem slot='content'>
+                                            <p>License:<a href={String(image_credit.license)}> {image_credit.license}</a></p> 
+                                        </IonItem>
+                                    </IonAccordion>
+                                    </IonAccordionGroup>
+                                </IonCardContent>
+                            </>
+                        }
                     </IonCard>
                 </div>
-                <p style={{ position: "fixed", bottom: "0px" }}>{image_credit != "" ? "Photo: " + image_credit : ""}</p>
             </IonContent>
         </IonPage>
     );
