@@ -1,0 +1,8 @@
+{
+    "appId": "io.ionic.uselessunit",
+    "appName": "uselessunit",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+}

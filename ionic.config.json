@@ -1,5 +1,7 @@
 {
   "name": "uselessunit",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
