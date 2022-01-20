@@ -80,10 +80,10 @@ const Home: React.FC = () => {
             <IonCardContent>
               <IonItem>
                 <IonItem color={missing_value ? "danger" : ""}>
-                  <IonInput slot="start" type="number" onIonChange={e => setValue(Number(e.detail.value))} value={Number(value)}></IonInput>
+                  <IonInput type="number" onIonChange={e => setValue(Number(e.detail.value))} value={Number(value)}></IonInput>
                 </IonItem>
                 <IonItem color={missing_type ? "danger" : ""}>
-                  <IonSelect interface="popover" slot="end" placeholder="Unit" onIonChange={e => { setValueType(e.detail.value) }} value={value_type}>
+                  <IonSelect interface="popover" placeholder="Unit" onIonChange={e => { setValueType(e.detail.value) }} value={value_type}>
                     {config.value_types.map((option, index) => (
                       <IonSelectOption key={index} value={option.type}>{metric ? option.metric : option.imperial}</IonSelectOption>
                     ))}
