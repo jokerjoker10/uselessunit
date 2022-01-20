@@ -7,6 +7,7 @@ import { Request, Result } from '../models/SessionData';
 import calculator from '../util/claculator';
 import { logoGithub } from 'ionicons/icons'
 import Logo from '../components/logo';
+import { url_fun } from '../util/url';
 
 const ResultPage: React.FC = () => {
     const history = useHistory();
@@ -57,6 +58,16 @@ const ResultPage: React.FC = () => {
 
     useIonViewDidEnter(() => {
         var _request = new URLSearchParams(location.search).get("request") || null;
+        var _metric = new URLSearchParams(location.search).get("metric") || null;
+        
+        if(_metric != null){
+            if(_metric == "false") {
+                setMetric(false);
+            }
+            else if(_metric == "true") {
+                setMetric(true);
+            }
+        }
 
         if (_request != null) {
             var parsed_data: Request = JSON.parse(decodeURIComponent(_request));
@@ -91,10 +102,13 @@ const ResultPage: React.FC = () => {
     useEffect(() => {
         getResultString();
         setImage();
-    })
+    });
 
     function metricToggle() {
-        setMetric(!metric)
+        var _metric = !metric;
+        setMetric(_metric);
+        var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: request?.result_name }
+        history.push({pathname: location.pathname, search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: _metric}))});
     }
 
     function nextResult() {
@@ -108,7 +122,7 @@ const ResultPage: React.FC = () => {
         setCurrentResult(new_result);
         var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request)) });
+        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: metric}))});
 
         setImage();
     }
@@ -125,7 +139,7 @@ const ResultPage: React.FC = () => {
         setCurrentResult(new_result);
         var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: "request=" + encodeURIComponent(JSON.stringify(_request)) });
+        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: metric}))});
 
         setImage();
     }
@@ -155,7 +169,7 @@ const ResultPage: React.FC = () => {
                             <IonButton fill="outline" slot='end' onClick={e => { nextResult() }}>{">"}</IonButton>
                         </IonCardContent>
                         <IonCardContent>
-                            <IonButton expand="block" fill="outline" href="/">
+                            <IonButton expand="block" fill="outline" onClick={e => history.push({pathname: "/", search: String(url_fun.getQuerryString({metric: metric}))})}>
                                 Calculate another
                             </IonButton>
                         </IonCardContent>
