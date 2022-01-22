@@ -2,8 +2,18 @@ import { IonAvatar, IonBackButton, IonButton, IonButtons, IonCard, IonCardConten
 import Logo from '../../components/logo';
 import './about.css';
 import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline } from 'ionicons/icons';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
+import { useEffect } from 'react';
 
 const About: React.FC = () => {
+    // Matomo Site Tracking
+    const { trackPageView } = useMatomo();
+    useEffect(() => {
+        trackPageView({
+            documentTitle: 'Reusult',
+            href: '/res'
+        })
+    }, [])
 
     function openMail() {
         window.open("mailto:uselessunit@jokerjoker10.cloud");
@@ -12,6 +22,7 @@ const About: React.FC = () => {
     function openGithub() {
         window.open("https://github.com/jokerjoker10/uselessunit/issues");
     }
+    
     return (
         <IonPage>
             <IonToolbar>

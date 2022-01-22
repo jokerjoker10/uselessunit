@@ -3,10 +3,26 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react'
+import matomo from './config/config.json';
+
+// Matomo Tracking
+const instance = createInstance({
+  urlBase: matomo.matomo.matomo_url,
+  siteId: matomo.matomo.matomo_site_id,
+  disabled: !matomo.matomo.use_matomo,
+  configurations: {
+    disableCookies: true,
+    setSecureCookie: process.env.NODE_ENV != "development",
+    setRequestMethod: 'POST'
+  }
+})
 
 ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <MatomoProvider value={instance}>
+       <App />
+      </MatomoProvider>
     </React.StrictMode>,
   document.getElementById('root')
 );
