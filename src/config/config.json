@@ -1,0 +1,7 @@
+{
+    "matomo": {
+        "use_matomo": false,
+        "matomo_url": "https://your.matomo/",
+        "matomo_site_id": 1
+    }
+}

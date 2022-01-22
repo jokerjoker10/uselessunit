@@ -9,8 +9,24 @@ import { logoGithub } from 'ionicons/icons'
 import Logo from '../components/logo';
 import { url_fun } from '../util/url';
 import { CreditModel } from '../models/CreditModel';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 const ResultPage: React.FC = () => {
+    // Matomo Site Tracking
+    const { trackPageView } = useMatomo();
+    useEffect(() => {
+        trackPageView({
+            documentTitle: 'Reusult',
+            href: '/res',
+            customDimensions: [
+                {
+                    id: 1,
+                    value: metric ? "metric_system" : "imperial_system"
+                }
+            ]
+        })
+    }, [])
+
     const history = useHistory();
     const location = useLocation();
 
@@ -64,12 +80,12 @@ const ResultPage: React.FC = () => {
     useIonViewDidEnter(() => {
         var _request = new URLSearchParams(location.search).get("request") || null;
         var _metric = new URLSearchParams(location.search).get("metric") || null;
-        
-        if(_metric != null){
-            if(_metric == "false") {
+
+        if (_metric != null) {
+            if (_metric == "false") {
                 setMetric(false);
             }
-            else if(_metric == "true") {
+            else if (_metric == "true") {
                 setMetric(true);
             }
         }
@@ -113,7 +129,7 @@ const ResultPage: React.FC = () => {
         var _metric = !metric;
         setMetric(_metric);
         var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: request?.result_name }
-        history.push({pathname: location.pathname, search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: _metric}))});
+        history.push({ pathname: location.pathname, search: String(url_fun.getQuerryString({ request: JSON.stringify(_request), metric: _metric })) });
     }
 
     function nextResult() {
@@ -127,7 +143,7 @@ const ResultPage: React.FC = () => {
         setCurrentResult(new_result);
         var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: metric}))});
+        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({ request: JSON.stringify(_request), metric: metric })) });
 
         setImage();
     }
@@ -144,7 +160,7 @@ const ResultPage: React.FC = () => {
         setCurrentResult(new_result);
         var _request: Request = { value_type: String(request?.value_type), value: Number(request?.value), result_name: new_result?.name }
         setRequest(_request);
-        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({request: JSON.stringify(_request), metric: metric}))});
+        history.push({ pathname: "/res", search: String(url_fun.getQuerryString({ request: JSON.stringify(_request), metric: metric })) });
 
         setImage();
     }
@@ -174,32 +190,32 @@ const ResultPage: React.FC = () => {
                             <IonButton fill="outline" slot='end' onClick={e => { nextResult() }}>{">"}</IonButton>
                         </IonCardContent>
                         <IonCardContent>
-                            <IonButton expand="block" fill="outline" onClick={e => history.push({pathname: "/", search: String(url_fun.getQuerryString({metric: metric}))})}>
+                            <IonButton expand="block" fill="outline" onClick={e => history.push({ pathname: "/", search: String(url_fun.getQuerryString({ metric: metric })) })}>
                                 Calculate another
                             </IonButton>
                         </IonCardContent>
                         {
-                            image_credit == null ? <></> : 
-                            <>
-                                <IonCardContent>
-                                    <IonAccordionGroup>
-                                    <IonAccordion>
-                                        <IonItem slot='header'>
-                                            <IonLabel>Image Credit</IonLabel>
-                                        </IonItem>
-                                        <IonItem slot='content'>
-                                            <p>Author: {image_credit.author}</p>
-                                        </IonItem>
-                                        <IonItem slot='content'>
-                                            <p>Photo:<a href={String(image_credit.photo)}> {image_credit.photo}</a></p> 
-                                        </IonItem>
-                                        <IonItem slot='content'>
-                                            <p>License:<a href={String(image_credit.license)}> {image_credit.license}</a></p> 
-                                        </IonItem>
-                                    </IonAccordion>
-                                    </IonAccordionGroup>
-                                </IonCardContent>
-                            </>
+                            image_credit == null ? <></> :
+                                <>
+                                    <IonCardContent>
+                                        <IonAccordionGroup>
+                                            <IonAccordion>
+                                                <IonItem slot='header'>
+                                                    <IonLabel>Image Credit</IonLabel>
+                                                </IonItem>
+                                                <IonItem slot='content'>
+                                                    <p>Author: {image_credit.author}</p>
+                                                </IonItem>
+                                                <IonItem slot='content'>
+                                                    <p>Photo:<a href={String(image_credit.photo)}> {image_credit.photo}</a></p>
+                                                </IonItem>
+                                                <IonItem slot='content'>
+                                                    <p>License:<a href={String(image_credit.license)}> {image_credit.license}</a></p>
+                                                </IonItem>
+                                            </IonAccordion>
+                                        </IonAccordionGroup>
+                                    </IonCardContent>
+                                </>
                         }
                     </IonCard>
                 </div>

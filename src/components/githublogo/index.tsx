@@ -12,7 +12,7 @@ const GithubLogo: React.FC<ContainerProps> = () => {
     return (
         <IonItem  className="github_logo_frame">
             <IonList>
-                <IonLabel><a href="/about">About</a></IonLabel>
+                <IonLabel><a href="/about">About&Privacy</a></IonLabel>
             </IonList>
             <IonIcon onClick={loadGithub} icon={logoGithub} className="github_logo"></IonIcon>
         </IonItem>

@@ -1,13 +1,23 @@
 import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Home.css';
 import config from '../config/data.json'
 import { useHistory, useLocation } from 'react-router';
 import { Request } from '../models/SessionData';
 import Logo from '../components/logo';
 import { url_fun } from '../util/url';
+import { useMatomo } from '@datapunt/matomo-tracker-react';
 
 const Home: React.FC = () => {
+  // Matomo site Track
+  const { trackPageView } = useMatomo();
+  useEffect(() => {
+    trackPageView({
+      documentTitle: 'Home',
+      href: '/'})
+  }, [])
+  
+  
   const history = useHistory();
   const location = useLocation();
 
@@ -44,10 +54,10 @@ const Home: React.FC = () => {
     var _metric = !metric;
     setMetric(_metric);
   }
-
+  
   useIonViewDidEnter(() => {
     var _metric = new URLSearchParams(location.search).get("metric") || null;
-    console.log(_metric)
+    
     if(_metric != null){
         if(_metric == "false") {
             setMetric(false);
