@@ -1,4 +1,6 @@
 {
+    "url": "https://your.domain/",
+    "build_type": "web",
     "matomo": {
         "use_matomo": false,
         "matomo_url": "https://your.matomo/",

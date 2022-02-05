@@ -1,7 +1,8 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import './Home.css';
-import config from '../config/data.json'
+import data from '../config/data.json';
+import config from '../config/config.json';
 import { useHistory, useLocation } from 'react-router';
 import { Request } from '../models/SessionData';
 import Logo from '../components/logo';
@@ -13,8 +14,13 @@ const Home: React.FC = () => {
   const { trackPageView } = useMatomo();
   useEffect(() => {
     trackPageView({
-      documentTitle: 'Home',
-      href: '/'})
+      customDimensions: [
+        {
+            id: 2,
+            value: config.build_type 
+        }
+      ]
+    })
   }, [])
   
   
@@ -94,7 +100,7 @@ const Home: React.FC = () => {
                 </IonItem>
                 <IonItem color={missing_type ? "danger" : ""}>
                   <IonSelect interface="popover" placeholder="Unit" onIonChange={e => { setValueType(e.detail.value) }} value={value_type}>
-                    {config.value_types.map((option, index) => (
+                    {data.value_types.map((option, index) => (
                       <IonSelectOption key={index} value={option.type}>{metric ? option.metric : option.imperial}</IonSelectOption>
                     ))}
                   </IonSelect>
