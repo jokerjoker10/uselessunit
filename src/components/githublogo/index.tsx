@@ -1,20 +1,12 @@
-import { IonIcon, IonItem, IonLabel, IonList } from '@ionic/react';
-import { logoGithub } from 'ionicons/icons';
+import { IonItem, IonLabel } from '@ionic/react';
 import './style.css';
 
 interface ContainerProps { }
 
-const GithubLogo: React.FC<ContainerProps> = () => {
-    function loadGithub() {
-        window.open('https://github.com/jokerjoker10/uselessunit');
-    }
-    
+const GithubLogo: React.FC<ContainerProps> = () => {    
     return (
         <IonItem  className="github_logo_frame">
-            <IonList>
-                <IonLabel><a href="/about">About&Privacy</a></IonLabel>
-            </IonList>
-            <IonIcon onClick={loadGithub} icon={logoGithub} className="github_logo"></IonIcon>
+            <IonLabel><a href="/about">About&Privacy</a></IonLabel>
         </IonItem>
     );
 };
