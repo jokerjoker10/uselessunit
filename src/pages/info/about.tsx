@@ -51,13 +51,13 @@ const About: React.FC = () => {
                                 <IonCardContent>
                                     <IonTitle color="primary">Tracking</IonTitle>
                                     This website/app uses Matomo Tracking. Matomo is configured to don't use cookies. You can opt out of tracking here:
-                                    <IonItem>
-
+                                    
+                                    <IonCard style={{ backgroundColor: "#1e1e1e"}}>
                                         <iframe
-                                        style={{border: 0, width: "600px"}}
+                                        style={{border: 0, width: "100%"}}
                                         src={config.matomo.matomo_url + "index.php?module=CoreAdminHome&action=optOut&language=en&backgroundColor=1e1e1e&fontColor=949494&fontSize=14px&fontFamily=sans-serif"}
                                         ></iframe>
-                                    </IonItem>
+                                    </IonCard>
 
                                 </IonCardContent>
                             </>  

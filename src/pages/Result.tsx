@@ -1,27 +1,32 @@
-import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonImg, IonInput, IonItem, IonLabel, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonItem, IonLabel, IonPage, IonTitle, IonToggle, IonToolbar, useIonViewDidEnter } from '@ionic/react';
 import { useEffect, useState } from 'react';
 import './Result.css';
-import config from '../config/data.json'
+import data from '../config/data.json';
+import config from '../config/config.json';
 import { useHistory, useLocation } from 'react-router';
 import { Request, Result } from '../models/SessionData';
 import calculator from '../util/claculator';
-import { logoGithub } from 'ionicons/icons'
+import { shareSocialOutline } from 'ionicons/icons';
 import Logo from '../components/logo';
 import { url_fun } from '../util/url';
 import { CreditModel } from '../models/CreditModel';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
+import { Share } from '@capacitor/share';
+import { url } from 'inspector';
 
 const ResultPage: React.FC = () => {
     // Matomo Site Tracking
-    const { trackPageView } = useMatomo();
+    const { trackPageView, trackEvent } = useMatomo();
     useEffect(() => {
         trackPageView({
-            documentTitle: 'Reusult',
-            href: '/res',
             customDimensions: [
                 {
                     id: 1,
                     value: metric ? "metric_system" : "imperial_system"
+                },
+                {
+                    id: 2,
+                    value: config.build_type 
                 }
             ]
         })
@@ -43,7 +48,7 @@ const ResultPage: React.FC = () => {
     const [request, setRequest] = useState<Request>();
 
     function setImage() {
-        config.result_types.forEach(element => {
+        data.result_types.forEach(element => {
             if (element.name == current_result?.name) {
                 setImageCredit(element.img.credit == null ? null : {
                     author: element.img.credit.author,
@@ -57,7 +62,7 @@ const ResultPage: React.FC = () => {
 
     function getResultString() {
         var type = "";
-        config.value_types.forEach(element => {
+        data.value_types.forEach(element => {
             if (element.type == current_result?.value_type) {
                 type = metric ? element.metric : element.imperial;
                 if (!metric) {
@@ -165,6 +170,24 @@ const ResultPage: React.FC = () => {
         setImage();
     }
 
+    function share(){
+        // tracking shares
+        trackEvent({ category: "share", action: "share"});
+        // share api
+        Share.share({
+            title: "Useless Unit",
+            text: String(result),
+            url: config.url + "res?" + String(url_fun.getQuerryString({ request: JSON.stringify(request), metric: metric })),
+            dialogTitle: "Useless Unit"
+        })
+        .then(() => {
+
+        })
+        .catch(() => {
+            console.log("Error Sharing!")
+        });
+    }
+
     return (
         <IonPage>
             <IonToolbar>
@@ -187,10 +210,20 @@ const ResultPage: React.FC = () => {
                         <IonCardContent></IonCardContent>
                         <IonCardContent style={{ display: "flex", justifyContent: "center" }}>
                             <IonButton fill="outline" slot='start' onClick={e => { prevResult() }}>{"<"}</IonButton>
+                            {   
+                                config.build_type == "android" || config.build_type == "ios" ?
+                                <>
+                                    <IonButton slot='start' onClick={() => share()}>
+                                        <IonIcon icon={shareSocialOutline}></IonIcon>Share
+                                    </IonButton>
+                                </>
+                                : <></>
+                            }
+                            
                             <IonButton fill="outline" slot='end' onClick={e => { nextResult() }}>{">"}</IonButton>
                         </IonCardContent>
                         <IonCardContent>
-                            <IonButton expand="block" fill="outline" onClick={e => history.push({ pathname: "/", search: String(url_fun.getQuerryString({ metric: metric })) })}>
+                            <IonButton expand="block" fill="outline" href="/">
                                 Calculate another
                             </IonButton>
                         </IonCardContent>
