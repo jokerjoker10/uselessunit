@@ -13,7 +13,7 @@
                 },
                 {
                     "value_type": "mass_t",
-                    "value_of_one": 0.002
+                    "value_of_one": 0.0002
                 }
             ]
         },
