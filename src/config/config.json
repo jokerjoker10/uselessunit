@@ -1,5 +1,6 @@
 {
     "url": "https://your.domain/",
+    "privacy_policy_url" : "https://privacy.policy",
     "build_type": "web",
     "matomo": {
         "use_matomo": false,
