@@ -12,7 +12,6 @@ import { url_fun } from '../util/url';
 import { CreditModel } from '../models/CreditModel';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { Share } from '@capacitor/share';
-import { url } from 'inspector';
 
 const ResultPage: React.FC = () => {
     // Matomo Site Tracking
@@ -171,20 +170,19 @@ const ResultPage: React.FC = () => {
     }
 
     function share(){
-        // tracking shares
-        trackEvent({ category: "share", action: "share"});
         // share api
         Share.share({
             title: "Useless Unit",
             text: String(result),
             url: config.url + "res?" + String(url_fun.getQuerryString({ request: JSON.stringify(request), metric: metric })),
-            dialogTitle: "Useless Unit"
+            dialogTitle: String(result)
         })
-        .then(() => {
-
+        .then((share_result) => {
+            // tracking shares
+            trackEvent({ category: "share", action: share_result.activityType ?? "share_action_unknown"});
         })
-        .catch(() => {
-            console.log("Error Sharing!")
+        .catch((error) => {
+            console.log("Error Sharing: " + error.toString());
         });
     }
 
@@ -213,13 +211,12 @@ const ResultPage: React.FC = () => {
                             {   
                                 config.build_type == "android" || config.build_type == "ios" ?
                                 <>
-                                    <IonButton slot='start' onClick={() => share()}>
+                                    <IonButton slot='start' onClick={e => {share()}}>
                                         <IonIcon icon={shareSocialOutline}></IonIcon>Share
                                     </IonButton>
                                 </>
                                 : <></>
-                            }
-                            
+                            }                            
                             <IonButton fill="outline" slot='end' onClick={e => { nextResult() }}>{">"}</IonButton>
                         </IonCardContent>
                         <IonCardContent>

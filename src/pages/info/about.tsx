@@ -1,7 +1,7 @@
-import { IonAvatar, IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonPage, IonSelect, IonSelectOption, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonIcon, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import Logo from '../../components/logo';
 import './about.css';
-import { logoDocker, logoGithub, logoIonic, logoReact, logoTwitter, mailOutline } from 'ionicons/icons';
+import { logoDocker, logoGithub, logoIonic, logoTwitter, mailOutline } from 'ionicons/icons';
 import { useMatomo } from '@datapunt/matomo-tracker-react';
 import { useEffect } from 'react';
 import config from '../../config/config.json';
@@ -38,7 +38,7 @@ const About: React.FC = () => {
                     <IonCard className="card">
                         <IonCardHeader>
                             <IonCardTitle color="primary">
-                                About & Privacy
+                                About
                             </IonCardTitle>
                         </IonCardHeader>
                         <IonCardContent>
